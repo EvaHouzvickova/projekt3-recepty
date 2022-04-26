@@ -44,7 +44,7 @@ const recepty = [
   { nadpis: 'Kuřecí salát',
     popis: 'Jí hoře ocelovými vozíkem. Esli kotě napadne od ferdo, no pás uznat pustý. Prý chlapče sáhla tě koleno jež uvádí a posunující.',
     hodnoceni: 4.7,
-    kategorie: 'Hlavní jidlo',
+    kategorie: 'Hlavní jídlo',
     stitek: 'hlavniJidlo',
     img: 'https://images.pexels.com/photos/33406/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=650&w=940'
   },

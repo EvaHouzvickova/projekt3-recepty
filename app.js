@@ -66,7 +66,6 @@ hledat.addEventListener("input", (e) => {
 })
 
 /*Filtrování receptů podle kategorie*/
-
 const filterKategorie = document.getElementById('kategorie');
 
 filterKategorie.addEventListener("input", (e) => {
@@ -79,3 +78,30 @@ filterKategorie.addEventListener("input", (e) => {
         }
     }
 })
+
+/*Filtrování receptů podle hodnocení*/
+const filterHodnoceni = document.getElementById('razeni');
+
+filterHodnoceni.addEventListener('input', (e) => {
+    let vybraneHodnoceni = e.target.value;
+    seznamReceptu.innerHTML = '';
+    /*const kopieRecepty = recepty.slice();*/
+    
+    if (vybraneHodnoceni == 1) {
+        recepty.sort(function(a, b) {
+            return b.hodnoceni - a.hodnoceni;
+        })
+        generovaniReceptu();
+    }
+    if  (vybraneHodnoceni == 2) {
+        recepty.sort(function(a, b) {
+            return a.hodnoceni - b.hodnoceni;
+        })
+        generovaniReceptu();
+    }
+        if (vybraneHodnoceni == "") {
+        generovaniReceptu();
+    }
+
+})
+
