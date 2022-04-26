@@ -51,8 +51,7 @@ function generovaniReceptu() {
     }
 }
 
-/*Hledání receptů*/
-
+/*Hledání receptů dle zadaného slova/spojení*/
 const hledat = document.getElementById('hledat');
 
 hledat.addEventListener("input", (e) => {
@@ -61,6 +60,21 @@ hledat.addEventListener("input", (e) => {
 
     for (let i = 0; i < recepty.length; i++) {
         if(recepty[i].nadpis.toLowerCase().includes(zadanyText)) {
+            vytvorRecept(i);
+        }
+    }
+})
+
+/*Filtrování receptů podle kategorie*/
+
+const filterKategorie = document.getElementById('kategorie');
+
+filterKategorie.addEventListener("input", (e) => {
+    let vybranaKategorie = e.target.value;
+    seznamReceptu.innerHTML = '';
+
+    for (let i = 0; i < recepty.length; i++) {
+        if(recepty[i].kategorie.includes(vybranaKategorie)) {
             vytvorRecept(i);
         }
     }
