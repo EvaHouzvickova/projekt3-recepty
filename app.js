@@ -22,6 +22,18 @@ let seznamReceptu = document.getElementById('recepty');
 
 generovaniReceptu();
 
+/*načte se první recept z pole po otevření stránky*/
+localStorage.recepty = JSON.stringify(recepty);
+let hodnota = localStorage.recepty;
+document.getElementById('recept-foto').src = recepty[0].img;
+document.getElementById('recept-foto').alt = 'Foto receptu';
+document.getElementById('recept-kategorie').innerHTML = recepty[0].kategorie;
+document.getElementById('recept-hodnoceni').innerHTML = recepty[0].hodnoceni;
+document.getElementById('recept-nazev').innerHTML = recepty[0].nadpis;
+document.getElementById('recept-popis').innerHTML = recepty[0].popis;
+
+/*zobrazPoslednyRecept();*/
+
 function vytvorRecept(i) {
     let recept = document.createElement('div');
     recept.classList.add('recept');
@@ -111,6 +123,9 @@ filterHodnoceni.addEventListener('input', (e) => {
 
 /*po kliknutí se objeví detail receptu*/
 function zobrazDetailReceptu(i) {
+/* uložení do Local storage*/
+
+/*generování detailů*/
 document.getElementById('recept-foto').src = recepty[i].img;
 document.getElementById('recept-foto').alt = 'Foto receptu';
 document.getElementById('recept-kategorie').innerHTML = recepty[i].kategorie;
@@ -119,3 +134,13 @@ document.getElementById('recept-nazev').innerHTML = recepty[i].nadpis;
 document.getElementById('recept-popis').innerHTML = recepty[i].popis;
 }
 
+/* funkce pro zobrazení posledního receptu*/
+
+/*function zobrazPoslednyRecept(i) {
+    let poslednyRecept = localStorage.getItem('vybranyRecept');
+
+    if (!(poslednyRecept === null || poslednyRecept === undefined)) {
+        vybranyRecept = JSON.parse(poslednyRecept);
+    }
+    zobrazDetailReceptu(i);
+}*/
