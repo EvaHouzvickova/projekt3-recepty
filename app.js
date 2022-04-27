@@ -26,6 +26,10 @@ function vytvorRecept(i) {
     let recept = document.createElement('div');
     recept.classList.add('recept');
 
+    recept.addEventListener('click', () => {
+        zobrazDetailReceptu(i);
+    })
+
     let receptObrazek = document.createElement('div');
     receptObrazek.classList.add('recept-obrazek')
 
@@ -104,4 +108,14 @@ filterHodnoceni.addEventListener('input', (e) => {
     }
 
 })
+
+/*po kliknutí se objeví detail receptu*/
+function zobrazDetailReceptu(i) {
+document.getElementById('recept-foto').src = recepty[i].img;
+document.getElementById('recept-foto').alt = 'Foto receptu';
+document.getElementById('recept-kategorie').innerHTML = recepty[i].kategorie;
+document.getElementById('recept-hodnoceni').innerHTML = recepty[i].hodnoceni;
+document.getElementById('recept-nazev').innerHTML = recepty[i].nadpis;
+document.getElementById('recept-popis').innerHTML = recepty[i].popis;
+}
 
