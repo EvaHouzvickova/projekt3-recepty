@@ -115,10 +115,7 @@ function zobrazPoslednyRecept(i) {
         vybranyRecept = JSON.parse(poslednyRecept);
         console.log(vybranyRecept);
     }
-    document.getElementById('recept-foto').src = vybranyRecept.img;
-    document.getElementById('recept-foto').alt = 'Foto receptu';
-    document.getElementById('recept-kategorie').innerHTML = vybranyRecept.kategorie;
-    document.getElementById('recept-hodnoceni').innerHTML = vybranyRecept.hodnoceni;
-    document.getElementById('recept-nazev').innerHTML = vybranyRecept.nadpis;
-    document.getElementById('recept-popis').innerHTML = vybranyRecept.popis;
+    
+    receptyKopie[i] = vybranyRecept;
+    zobrazDetailReceptu(i);
 }; 
